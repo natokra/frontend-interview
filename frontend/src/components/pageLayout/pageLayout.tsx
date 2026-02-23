@@ -43,7 +43,7 @@ export const PageLayout = () => {
                             <AddCircleRoundedIcon color="primary" />
                         </IconButton>
                     </Tooltip>
-                    <Tooltip title="Switch Theme">
+                    <Tooltip title={`Switch to ${ctxTheme === 'light' ? 'dark' : 'light'} theme`}>
                         <IconButton onClick={handleThemeToggle}>
                             {ctxTheme === 'light' ?
                                 <DarkModeIcon sx={{ color: theme.palette.text.primary }} /> : <LightModeIcon />
