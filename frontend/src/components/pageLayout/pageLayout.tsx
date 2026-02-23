@@ -1,5 +1,5 @@
 
-import { IconButton, useTheme } from '@mui/material';
+import { IconButton, Tooltip, useTheme } from '@mui/material';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
@@ -38,14 +38,18 @@ export const PageLayout = () => {
             <div className="page-layout-wrapper">
                 <h1 style={{ color: theme.palette.text.primary }}>To-Do Lists</h1>
                 <div className='page-layout-buttons'>
-                    <IconButton onClick={handleAddListButton}>
-                        <AddCircleRoundedIcon color="primary" />
-                    </IconButton>
-                    <IconButton onClick={handleThemeToggle}>
-                        {ctxTheme === 'light' ?
-                            <DarkModeIcon sx={{ color: theme.palette.text.primary }} /> : <LightModeIcon />
-                        }
-                    </IconButton>
+                    <Tooltip title="Add List">
+                        <IconButton onClick={handleAddListButton}>
+                            <AddCircleRoundedIcon color="primary" />
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Switch Theme">
+                        <IconButton onClick={handleThemeToggle}>
+                            {ctxTheme === 'light' ?
+                                <DarkModeIcon sx={{ color: theme.palette.text.primary }} /> : <LightModeIcon />
+                            }
+                        </IconButton>
+                    </Tooltip>
                 </div>
             </div>
             {todoLists.map((todoList) => <Card key={todoList.id} todoItems={todoList.todoItems} name={todoList.name} id={todoList.id} />)}

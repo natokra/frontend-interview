@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { TodoItem } from "../../hooks/useTodoList"
 import "./styles.css"
-import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, useTheme } from "@mui/material";
+import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Tooltip, useTheme } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -108,17 +108,6 @@ export default function Card({ name, todoItems, id }: CardProps) {
                                     handleEdition()
                                 }
                             }}
-                            endAdornment={
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        aria-label="add item"
-                                        onClick={handleEdition}
-                                        edge="end"
-                                    >
-                                        <AddIcon sx={{ color: theme.palette.text.contrastText }} />
-                                    </IconButton>
-                                </InputAdornment>
-                            }
                             label="Edit the task name"
                         />
                     </FormControl>
@@ -126,20 +115,29 @@ export default function Card({ name, todoItems, id }: CardProps) {
                 <div className="card-icon-button-wrapper">
                     {editing ? (
                         <>
-                            <IconButton aria-label="accept" onClick={handleEdition}>
-                                <DoneIcon color="primary" />
-                            </IconButton>
-                            <IconButton aria-label="dismiss" onClick={handleDismissEdition}>
-                                <CloseIcon color="secondary" />
-                            </IconButton>
+                            <Tooltip title="Accept">
+                                <IconButton aria-label="accept" onClick={handleEdition}>
+                                    <DoneIcon color="primary" />
+                                </IconButton>
+
+                            </Tooltip>
+                            <Tooltip title="Cancel">
+                                <IconButton aria-label="dismiss" onClick={handleDismissEdition}>
+                                    <CloseIcon color="secondary" />
+                                </IconButton>
+                            </Tooltip>
                         </>
                     ) : (<>
+                    <Tooltip title="Edit">
                         <IconButton aria-label="edit" onClick={handleEditButtonClick}>
                             <EditIcon color="primary" />
                         </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Delete">
                         <IconButton aria-label="delete" onClick={handleDeleteClick}>
                             <DeleteIcon color="secondary" />
                         </IconButton>
+                    </Tooltip>
                     </>)}
 
                 </div>
