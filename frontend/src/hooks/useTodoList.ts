@@ -206,9 +206,9 @@ export function useTodoList(): UseTodoListReturn {
 
             const sorted = data.map((list) => {
                 const ordering = getListOrdering(list.id);
+                console.log({ id: list.id, ordering })
 
                 if (ordering.length === 0) {
-                    // 👇 no existe ordering, lo creamos con el orden que viene de la API
                     const defaultOrdering = list.todoItems.map((item) => item.id);
                     setListOrdering(list.id, defaultOrdering);
                     return list;
