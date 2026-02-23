@@ -22,6 +22,7 @@ async function bootstrap() {
     .setDescription('Todo-Lists API for frontend interview')
     .setVersion('1.0')
     .build();
+  app.enableCors({ allowedHeaders: ['content-type'], origin: 'http://localhost:5173', credentials: true, });
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/docs', app, document, {
     customCssUrl: 'http://localhost:4000/assets/swagger-theme.css',

@@ -8,6 +8,7 @@ import { join } from 'path';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..','assets'), // Path to your assets folder
       serveRoot: '/assets', // Route to serve static assets
+      
     }),
     TodoListsModule,
   ],

@@ -1,0 +1,29 @@
+.card {
+    height: max-content;
+    border: 4px solid;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-header {
+    height: 102px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    gap: 12px;
+}
+
+.card-body {
+    padding: 20px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+.card-icon-button-wrapper {
+    display: flex;
+    gap: 12px;
+}

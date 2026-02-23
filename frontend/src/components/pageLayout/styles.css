@@ -1,0 +1,12 @@
+.page-layout-buttons {
+  display: flex;
+  gap: 12px;
+  height: 40px;
+}
+
+.page-layout-wrapper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+}

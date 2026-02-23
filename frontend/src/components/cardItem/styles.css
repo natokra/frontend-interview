@@ -1,0 +1,31 @@
+.card-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-item-check-wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    min-width: 285px;
+    width: 100%;
+}
+
+.card-item-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: left;
+}
+
+.card-item-action-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.card-item-text-line-through {
+    text-decoration: line-through;
+}
